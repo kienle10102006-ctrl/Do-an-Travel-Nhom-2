@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel - Đặt phòng khách sạn</title>
+    <link rel="stylesheet" href="trang3.css" />
+    <link rel="stylesheet" href="../TrangChu/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+<!-- ===== HEADER ===== -->
+<header class="header">
+    <div class="header-top">
+        <div class="container header-top-inner">
+            <a href="../TrangChu/index.html" class="logo">Travel<span>✈️</span></a>
+            <div class="top-right">
+                <a href="#">Khuyến mãi</a>
+                <a href="#">Hỗ trợ</a>
+                <a href="#">Hợp tác với chúng tôi</a>
+                <a href="#">Đặt chỗ của tôi</a>
+                <button class="btn-outline">Đăng Nhập</button>
+                <button class="btn-primary">Đăng ký</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom">
+        <div class="container nav-main">
+            <a href="../KhachSan/trang3.html">Khách sạn</a>
+            <a href="../DuaDonSanBay/DuaDonSanBay.html">Đưa đón sân bay</a>
+            <a href="../ChoThueXe/trang4.html">Cho thuê xe</a>
+
+            <!-- MORE DROPDOWN -->
+            <div class="more-dropdown">
+                <button class="more-btn">More ▾</button>
+                <div class="more-menu">
+                    <a href="../DuThuyen/DuThuyen.html">🛳️ Du thuyền</a>
+                    <a href="../CamNangDuLich/index.html">🧭 Cẩm nang du lịch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-bg">
+        <img src="anh3/ba2.jpg" alt="Hero Background" class="hero-bg-img" />
+      </div>
+      <div class="container">
+        <div class="hero-content">
+          <h1>
+            Tìm & đặt phòng khách sạn giá rẻ chỉ với<br />3 bước đơn giản!
+          </h1>
+          <p>
+            Khám phá ngay những ưu đãi tốt nhất<br />dành cho bạn tại Travel!
+          </p>
+        </div>
+        <div class="hero-slides">
+          <div class="slide">
+            <img
+              src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400"
+              alt="Địa chỉ cuối tuần"
+            />
+            <div class="slide-text">
+              <h3>ĐỊA CHỈ<br />CUỐI TUẦN</h3>
+              <p>Ưu đãi lên đến 30%</p>
+            </div>
+          </div>
+          <div class="slide">
+            <img
+              src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400"
+              alt="Đồng hành"
+            />
+            <div class="slide-text">
+              <h3>ĐỒNG HÀNH<br />ĐÀI TRAVEL</h3>
+              <p>Ưu đãi lên đến 30%</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn prev">‹</button>
+      <button class="slider-btn next">›</button>
+      <div class="slider-text">Xem thêm khuyến mãi</div>
+    </section>
+
+    <!-- Search Box -->
+    <section class="search-section">
+      <div class="container">
+        <div class="search-box">
+          <h3>Khách sạn xem gần đây</h3>
+          <p>Thành phố, địa điểm hoặc tên khách sạn:</p>
+
+          <form id="searchForm">
+            <div class="search-input-group">
+              <input
+                type="text"
+                id="destination"
+                placeholder="Thành phố, khách sạn, điểm đến"
+                required
+              />
+            </div>
+
+            <div class="search-row">
+              <div class="search-input-group">
+                <label>Nhận phòng:</label>
+                <input type="date" id="checkin" required />
+              </div>
+
+              <div class="search-input-group">
+                <label>Số đêm:</label>
+                <select id="nights" required>
+                  <option value="1">1 đêm</option>
+                  <option value="2">2 đêm</option>
+                  <option value="3">3 đêm</option>
+                  <option value="4">4 đêm</option>
+                  <option value="5">5 đêm</option>
+                  <option value="7">7 đêm</option>
+                </select>
+              </div>
+
+              <div class="search-date-display">
+                <label>Trả phòng</label>
+                <div id="checkout"></div>
+              </div>
+            </div>
+
+            <div class="search-input-group">
+              <label>Khách và phòng:</label>
+              <select id="guests">
+                <option>2 người lớn, 0 trẻ em, 1 phòng</option>
+                <option>1 người lớn, 0 trẻ em, 1 phòng</option>
+                <option>3 người lớn, 0 trẻ em, 1 phòng</option>
+                <option>2 người lớn, 1 trẻ em, 1 phòng</option>
+                <option>4 người lớn, 0 trẻ em, 2 phòng</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-search">Tìm kiếm</button>
+          </form>
+
+          <a href="#" class="link-payment">Thanh toán tại khách sạn</a>
+
+          <div id="searchResults" class="search-results"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promotion Banner -->
+    <div class="container">
+      <div class="promo-banner">
+        <h3>Deal tiết kiệm đi chơi cuối tuần</h3>
+        <p>Nhiều lựa chọn với ưu đãi 500k</p>
+      </div>
+
+      <div class="chill-banner">
+        <img
+          src="https://images.unsplash.com/photo-1566679056462-2075774c8c07?w=800"
+          alt="Chill cuối tuần"
+        />
+        <div class="banner-overlay">
+          <h2>ĐI CHILL CUỐI TUẦN</h2>
+          <p>Ưu đãi lên đến 30%</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Discount Codes -->
+    <section class="discount-section">
+      <div class="container">
+        <h2>Mã giảm giá cho bạn</h2>
+        <p>Chỉ áp dụng trên APP</p>
+
+        <div class="discount-tabs">
+          <button class="tab active">Mã giảm hot</button>
+          <button class="tab">Ngân hàng</button>
+          <button class="tab">ZALO Pay</button>
+          <button class="tab">Điểm đến hot</button>
+        </div>
+
+        <div class="discount-cards">
+          <div class="discount-card">
+            <div class="discount-icon">🏨</div>
+            <div class="discount-content">
+              <div class="discount-info">
+                <h4>Giảm đến 200k nội địa</h4>
+                <p>Giảm đến 200k, đặt từ 2.2 triệu</p>
+              </div>
+              <div class="discount-code-section">
+                <div class="discount-code">
+                  <span class="discount-code-icon">📋</span>
+                  <span class="code-text">KSVNCHILL</span>
+                </div>
+                <button class="copy-btn" data-code="KSVNCHILL">Sao chép</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="discount-card">
+            <div class="discount-icon">🏨</div>
+            <div class="discount-content">
+              <div class="discount-info">
+                <h4>Giảm đến 200k Đông Nam Á</h4>
+                <p>Giảm đến 200k, đặt từ 3 triệu</p>
+              </div>
+              <div class="discount-code-section">
+                <div class="discount-code">
+                  <span class="discount-code-icon">📋</span>
+                  <span class="code-text">KSDNACHILL</span>
+                </div>
+                <button class="copy-btn" data-code="KSDNACHILL">
+                  Sao chép
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="discount-card">
+            <div class="discount-icon">📱</div>
+            <div class="discount-content">
+              <div class="discount-info">
+                <h4>[Priority] eSIM miễn phí</h4>
+                <p>
+                  Đặt vé máy bay Trung Quốc từ 9 triệu<br />Đặt khách sạn Trung
+                  Quốc
+                </p>
+              </div>
+              <div class="discount-code-section">
+                <div class="discount-code">
+                  <span class="discount-code-icon">📋</span>
+                  <span class="code-text">ESIMFREE</span>
+                </div>
+                <button class="copy-btn" data-code="ESIMFREE">Sao chép</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Weekend Destinations -->
+    <section class="weekend-section">
+      <div class="container">
+        <h2>Chơi cuối tuần gần nhà</h2>
+
+        <div class="city-tabs">
+          <button class="city-tab active" data-city="Đà Nẵng">Đà Nẵng</button>
+          <button class="city-tab" data-city="Đà Lạt">Đà Lạt</button>
+          <button class="city-tab" data-city="TP.HCM">TP.HCM</button>
+          <button class="city-tab" data-city="Vũng Tàu">Vũng Tàu</button>
+          <button class="city-tab" data-city="Nha Trang">Nha Trang</button>
+          <button class="city-tab" data-city="Hà Nội">Hà Nội</button>
+        </div>
+
+        <div class="hotel-cards" id="hotelCardsContainer">
+          <!-- Hotels will be loaded here by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Hot Destinations -->
+    <section class="hot-destinations">
+      <div class="container">
+        <h2>Điểm đến hot nhất do Travel đề xuất</h2>
+
+        <div class="destination-grid">
+          <div class="destination-card">
+            <img src="anh3/danang.jpg" alt="Đà Nẵng" />
+            <div class="destination-info">
+              <h3>Đà Nẵng</h3>
+              <p>Có 763 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/nhatrang.jpg" alt="Nha Trang" />
+            <div class="destination-info">
+              <h3>Nha Trang</h3>
+              <p>Có 569 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/phuquoc.jpg" alt="Phú Quốc" />
+            <div class="destination-info">
+              <h3>Phú Quốc</h3>
+              <p>Có 381 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/vungtau.jpg" alt="Vũng Tàu" />
+            <div class="destination-info">
+              <h3>Vũng Tàu</h3>
+              <p>Có 339 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/phanthiet.jpg" alt="Phan Thiết" />
+            <div class="destination-info">
+              <h3>Phan Thiết</h3>
+              <p>Có 243 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/dalat.jpg" alt="Đà Lạt" />
+            <div class="destination-info">
+              <h3>Đà Lạt</h3>
+              <p>Có 591 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/hoian.jpg" alt="Hội An" />
+            <div class="destination-info">
+              <h3>Hội An</h3>
+              <p>Có 553 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/quynhon.jpg" alt="Quy Nhơn" />
+            <div class="destination-info">
+              <h3>Quy Nhơn</h3>
+              <p>Có 80 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/halong.jpg" alt="Hạ Long" />
+            <div class="destination-info">
+              <h3>Hạ Long</h3>
+              <p>Có 230 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/my.jpg" alt="Mỹ" />
+            <div class="destination-info">
+              <h3>Mỹ</h3>
+              <p>Có 127044 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/uc.jpg" alt="Úc" />
+            <div class="destination-info">
+              <h3>Úc</h3>
+              <p>Có 25991 khách sạn</p>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh3/nhat.jpg" alt="Nhật Bản" />
+            <div class="destination-info">
+              <h3>Nhật Bản</h3>
+              <p>Có 28350 khách sạn</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration CTA -->
+    <section class="registration-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Đăng ký chỗ nghỉ của bạn</h2>
+          <p>
+            Tiếp cận hàng triệu khách hàng tiềm năng và phát<br />triển kinh
+            doanh cùng chúng tôi
+          </p>
+        </div>
+        <div class="cta-image">
+          <img
+            src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?w=600"
+            alt="Hotel Room"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Đặt phòng khách sạn tại Việt Nam trên Travel</h2>
+      </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="ngonluon">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    Travel <span>✈️</span>
+                </div>
+                
+                <h3 class="footer-heading">Đối tác thanh toán</h3>
+                <div class="payment-partners">
+                    <div class="partner-box"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"></div>
+                    <div class="partner-box"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"></div>
+                    <div class="partner-box">JCB</div>
+                    <div class="partner-box">Amex</div>
+                    <div class="partner-box">VietQR</div>
+                    <div class="partner-box">MoMo</div>
+                    <div class="partner-box">Techcom</div>
+                    <div class="partner-box">VPBank</div>
+                    <div class="partner-box">VIB</div>
+                    <div class="partner-box">VCB</div>
+                    <div class="partner-box">OnePay</div>
+                    <div class="partner-box">MB</div>
+                </div>
+            </div>
+      
+              <div class="footer-col">
+                  <h3 class="footer-heading">Về Travel</h3>
+                  <ul class="footer-links">
+                      <li><a href="#">Cách đặt chỗ</a></li>
+                      <li><a href="#">Liên hệ chúng tôi</a></li>
+                      <li><a href="#">Trợ giúp</a></li>
+                      <li><a href="#">Tuyển dụng</a></li>
+                      <li><a href="#">Về chúng tôi</a></li>
+                  </ul>
+      
+                  <h3 class="footer-heading" style="margin-top: 20px;">Theo dõi chúng tôi trên</h3>
+                  <ul class="social-links">
+                      <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                      <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                      <li><a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                      <li><a href="#"><i class="fa-brands fa-youtube"></i> Youtube</a></li>
+                      <li><a href="#"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
+                  </ul>
+              </div>
+      
+              <div class="footer-col">
+                  <h3 class="footer-heading">Sản phẩm</h3>
+                  <ul class="footer-links">
+                      <li><a href="../KhachSan/trang3.html">Khách sạn</a></li>
+                      <li><a href="#">Vé máy bay</a></li>
+                      <li><a href="../DuaDonSanBay/DuaDonSanBay.html">Đưa đón sân bay</a></li>
+                      <li><a href="../ChoThueXe/trang4.html">Cho thuê xe</a></li>
+                      <li><a href="#">Hoạt động vui chơi/giải trí</a></li>
+                      <li><a href="../DuThuyen/DuThuyen.html">Du thuyền</a></li>
+                      <li><a href="#">Biệt thự</a></li>
+                      <li><a href="#">Căn hộ</a></li>
+                  </ul>
+              </div>
+      
+              <div class="footer-col">
+                  <h3 class="footer-heading">Khác</h3>
+                  <ul class="footer-links">
+                      <li><a href="#">Travel Affiliate</a></li>
+                      <li><a href="#">Travel Blog</a></li>
+                      <li><a href="#">Chính sách</a></li>
+                      <li><a href="#">Chính sách quyền riêng tư</a></li>
+                      <li><a href="#">Điều khoản</a></li>
+                      <li><a href="#">Đăng kí nơi nghỉ</a></li>
+                      <li><a href="#">Đăng kí doanh nghiệp</a></li>
+                      <li><a href="#">Khu vực báo chí</a></li>
+                      <li><a href="#">Quy chế hoạt động</a></li>
+                      <li><a href="#">Vulnerability Disclosure Program</a></li>
+                  </ul>
+              </div>
+          </div>
+      
+          <div class="footer-bottom">
+              <p>Công ty TNHH Travel Việt Nam. Mã số DN: 0313581779. Tòa nhà An Phú, 117-119 Lý Chính Thắng, Phường Võ Thị Sáu, Quận 3, TP.HCM</p>
+              <p>Copyright © 2025 Travel. All rights reserved</p>
+          </div>
+      </footer>
+
+    <script src="trang3.js"></script>
+  </body>
+</html>

@@ -1,0 +1,246 @@
+/* ===== Dua Don San Bay Specific CSS ===== */
+:root {
+  --primary: #0b5cff;
+  --secondary: #ff5a00;
+  --text-main: #1a1a1a;
+  --text-muted: #64748b;
+  --bg-light: #f8fafc;
+}
+
+body {
+  background: #fff;
+  color: var(--text-main);
+  line-height: 1.6;
+  font-family: 'Google Sans', 'Google Sans Flex', sans-serif;
+}
+
+/* ================= HEADER & CATEGORY ================= */
+/* Header styles are inherited from global style.css */
+
+.category-bar {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.category-item {
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,.1);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.category-item.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ================= AIRPORT SEARCH ================= */
+.airport-search-wrapper {
+  background: linear-gradient(180deg, #F3FAFF 0%, #EEF7FF 100%);
+  padding: 60px 20px;
+}
+
+.airport-search-title {
+  max-width: 1000px;
+  margin: 0 auto 40px;
+  font-size: 32px;
+  text-align: center;
+  color: #1c2b4a;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.airport-search-box {
+  max-width: 1100px;
+  margin: auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.search-field {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-field label { 
+  font-size: 14px; 
+  font-weight: 700; 
+  color: #444; 
+}
+
+.search-field input {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 0 12px;
+  outline: none;
+}
+
+.search-btn {
+  height: 48px;
+  padding: 0 40px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-btn:hover {
+  background: var(--secondary);
+}
+
+/* ================= HERO & FEATURES ================= */
+.hero {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.hero-text { flex: 1; }
+.hero-text h1 { 
+  font-size: 42px; 
+  margin-bottom: 25px; 
+  line-height: 1.2; 
+  font-weight: 800;
+}
+.hero-text p { 
+  font-size: 18px; 
+  color: #555; 
+  margin-bottom: 30px; 
+}
+.hero img { 
+  width: 50%; 
+  border-radius: 24px; 
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+}
+
+.hero-actions .btn.primary {
+  background: var(--primary);
+}
+
+.features {
+  max-width: 1200px;
+  margin: 40px auto 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  padding: 0 20px;
+  text-align: center;
+}
+.feature img { width: 80px; margin-bottom: 20px; }
+.feature h3 { font-size: 20px; margin-bottom: 15px; color: #1c2b4a; font-weight: 700; }
+.feature p { font-size: 15px; color: #666; }
+
+/* ================= PARTNERS ================= */
+.partners-section {
+  background: #fcfcfc;
+  padding: 80px 20px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.partners-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.partners-text {
+  flex: 1;
+}
+
+.partners-text h2 {
+  font-size: 32px;
+  color: #1c2b4a;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.partners-text p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.partners-logos {
+  flex: 1.5;
+}
+
+.partners-logos img {
+  width: 100%;
+  border-radius: 15px;
+  mix-blend-mode: multiply;
+}
+
+/* ================= STEPS ================= */
+.steps { max-width: 1000px; margin: auto; padding: 100px 20px; }
+.steps h2 { 
+  margin-bottom: 50px; 
+  text-align: center; 
+  font-size: 32px; 
+  color: #1c2b4a; 
+  font-weight: 700;
+}
+
+.step {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.step-image { width: 200px; height: 130px; flex-shrink: 0; }
+.step-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; }
+
+.step-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.step-number {
+  width: 40px; height: 40px; background: var(--primary); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; font-weight: bold; flex-shrink: 0;
+}
+
+.step-content h4 { font-size: 20px; margin-bottom: 8px; color: #1c2b4a; font-weight: 700; }
+.step-content p { color: #666; font-size: 15px; }
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .hero, .partners-container, .intro { flex-direction: column; text-align: center; }
+    .hero img, .partners-logos { width: 100%; }
+    .features-grid { grid-template-columns: 1fr; }
+    .step { flex-direction: column; text-align: center; }
+    .step-content { flex-direction: column; align-items: center; }
+}

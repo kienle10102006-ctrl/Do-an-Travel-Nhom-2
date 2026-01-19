@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Travel - Cho thuê xe</title>
+    <link rel="stylesheet" href="trang4.css" />
+    <link rel="stylesheet" href="../TrangChu/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </head>
+  <body>
+<!-- ===== HEADER ===== -->
+<header class="header">
+    <div class="header-top">
+        <div class="container header-top-inner">
+            <a href="../TrangChu/index.html" class="logo">Travel<span>✈️</span></a>
+            <div class="top-right">
+                <a href="#">Khuyến mãi</a>
+                <a href="#">Hỗ trợ</a>
+                <a href="#">Hợp tác với chúng tôi</a>
+                <a href="#">Đặt chỗ của tôi</a>
+                <button class="btn-outline">Đăng Nhập</button>
+                <button class="btn-primary">Đăng ký</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-bottom">
+        <div class="container nav-main">
+            <a href="../KhachSan/trang3.html">Khách sạn</a>
+            <a href="../DuaDonSanBay/DuaDonSanBay.html">Đưa đón sân bay</a>
+            <a href="../ChoThueXe/trang4.html">Cho thuê xe</a>
+
+            <!-- MORE DROPDOWN -->
+            <div class="more-dropdown">
+                <button class="more-btn">More ▾</button>
+                <div class="more-menu">
+                    <a href="../DuThuyen/DuThuyen.html">🛳️ Du thuyền</a>
+                    <a href="../CamNangDuLich/index.html">🧭 Cẩm nang du lịch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+    <section class="promo-banner">
+      <img
+        src="anh4/banner.webp"
+        alt="Banner khuyến mãi 10.10"
+        class="banner-image"
+      />
+    </section>
+
+    <section class="search-section">
+      <div class="container">
+        <div class="search-box">
+          <div class="search-tabs">
+            <label>
+              <input type="radio" name="rental-type" value="all" checked />
+              <span>Cho thuê xe</span>
+            </label>
+            <label>
+              <input type="radio" name="rental-type" value="with-driver" />
+              <span>Xe có tài xế</span>
+            </label>
+            <label>
+              <input type="radio" name="rental-type" value="self-drive" />
+              <span>Xe tự lái</span>
+            </label>
+          </div>
+
+          <div class="search-form">
+            <div class="form-group">
+              <label for="location-input">Địa điểm thuê xe của bạn</label>
+              <div class="input-with-icon">
+                <span class="icon">📍</span>
+                <input
+                  type="text"
+                  id="location-input"
+                  placeholder="TP. Hồ Chí Minh"
+                />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="start-date">Ngày bắt đầu</label>
+              <div class="input-with-icon">
+                <span class="icon">📅</span>
+                <input type="date" id="start-date" value="2024-10-24" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="rental-time">Giờ bắt đầu</label>
+              <div class="input-with-icon">
+                <span class="icon">🕒</span>
+                <input type="time" id="rental-time" value="09:00" />
+              </div>
+            </div>
+
+            <button class="btn-search" onclick="handleSearch()">
+              Tìm kiếm
+            </button>
+          </div>
+
+          <!-- Kết quả tìm kiếm -->
+          <div
+            id="search-results"
+            style="
+              display: none;
+              margin-top: 30px;
+              padding: 20px;
+              background: #f9f9f9;
+              border-radius: 10px;
+            "
+          >
+            <h3 style="color: #3f51b5; margin-bottom: 15px">
+              Kết quả tìm kiếm
+            </h3>
+            <div id="results-content"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+      <div class="container">
+        <h2>Các đối tác cho thuê xe</h2>
+
+        <div class="partners-grid">
+          <div class="partner-item">
+            <img src="anh4/1.webp" alt="AROWISATA" class="partner-logo-img" />
+            <div class="partner-name">AROWISATA</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/2.webp" alt="ASMO TRANS" class="partner-logo-img" />
+            <div class="partner-name">ASMO TRANS</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/3.webp" alt="Bali" class="partner-logo-img" />
+            <div class="partner-name">Bali</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/4.webp" alt="Best Travel" class="partner-logo-img" />
+            <div class="partner-name">Best Travel</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/5.webp" alt="Bhavi" class="partner-logo-img" />
+            <div class="partner-name">Bhavi</div>
+          </div>
+
+          <div class="partner-item">
+            <img src="anh4/6.webp" alt="DOOLER" class="partner-logo-img" />
+            <div class="partner-name">DOOLER</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/7.webp" alt="GOLDEN SKY" class="partner-logo-img" />
+            <div class="partner-name">GOLDEN SKY</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/8.webp" alt="GOWITHTONG" class="partner-logo-img" />
+            <div class="partner-name">GOWITHTONG</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/9.webp" alt="HANA TRAVEL" class="partner-logo-img" />
+            <div class="partner-name">HANA TRAVEL</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/10.webp" alt="Hertz" class="partner-logo-img" />
+            <div class="partner-name">Hertz</div>
+          </div>
+          <div class="partner-item">
+            <img
+              src="anh4/11.webp"
+              alt="Indra Trans"
+              class="partner-logo-img"
+            />
+            <div class="partner-name">Indra Trans</div>
+          </div>
+          <div class="partner-item">
+            <img
+              src="anh4/12.webp"
+              alt="KANIGARA TRANS"
+              class="partner-logo-img"
+            />
+            <div class="partner-name">KANIGARA TRANS</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/13.webp" alt="MOOVBY" class="partner-logo-img" />
+            <div class="partner-name">MOOVBY</div>
+          </div>
+          <div class="partner-item">
+            <img
+              src="anh4/14.webp"
+              alt="Nusa Penida"
+              class="partner-logo-img"
+            />
+            <div class="partner-name">Nusa Penida</div>
+          </div>
+          <div class="partner-item">
+            <img
+              src="anh4/15.webp"
+              alt="PURNAMA CAR"
+              class="partner-logo-img"
+            />
+            <div class="partner-name">PURNAMA CAR</div>
+          </div>
+          <div class="partner-item">
+            <img
+              src="anh4/16.webp"
+              alt="Rainbow car"
+              class="partner-logo-img"
+            />
+            <div class="partner-name">Rainbow car</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/17.webp" alt="Situti" class="partner-logo-img" />
+            <div class="partner-name">Situti</div>
+          </div>
+          <div class="partner-item">
+            <img
+              src="anh4/18.webp"
+              alt="SUNSHINE TRAVEL"
+              class="partner-logo-img"
+            />
+            <div class="partner-name">SUNSHINE TRAVEL</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/19.webp" alt="TOUR EAST" class="partner-logo-img" />
+            <div class="partner-name">TOUR EAST</div>
+          </div>
+          <div class="partner-item">
+            <img src="anh4/20.webp" alt="TRAC" class="partner-logo-img" />
+            <div class="partner-name">TRAC</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations-section">
+      <div class="container">
+        <h2>Các địa điểm thuê xe phổ biến</h2>
+
+        <div class="destinations-grid">
+          <div class="destination-card">
+            <img src="anh4/jakarta.jpg" alt="Jakarta" />
+            <div class="destination-overlay">
+              <h3>Thuê xe ở Jakarta</h3>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh4/sydney.jpg" alt="Sydney" />
+            <div class="destination-overlay">
+              <h3>Thuê xe ở Sydney</h3>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh4/bali.jpg" alt="Bali" />
+            <div class="destination-overlay">
+              <h3>Thuê xe ở Bali</h3>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh4/bangkok.jpg" alt="Bangkok" />
+            <div class="destination-overlay">
+              <h3>Thuê xe ở Bangkok</h3>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh4/melb.jpg" alt="Melbourne" />
+            <div class="destination-overlay">
+              <h3>Thuê xe ở Melbourne</h3>
+            </div>
+          </div>
+
+          <div class="destination-card">
+            <img src="anh4/hcm.jpg" alt="Hồ Chí Minh" />
+            <div class="destination-overlay">
+              <h3>Thuê xe ở Hồ Chí Minh</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <h2>Câu hỏi thường gặp về thuê xe</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <h3>Thuê xe không tài xế có cần bằng lái quốc tế không?</h3>
+            <p>
+              Tùy thuộc vào quy định của từng quốc gia. Ví dụ tại Bali, bạn cần
+              có bằng lái quốc tế để thuê xe máy hoặc ô tô tự lái hợp pháp.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Giá thuê xe đã bao gồm xăng chưa?</h3>
+            <p>
+              Thông thường giá thuê xe tự lái chưa bao gồm xăng. Bạn nhận xe mức
+              xăng nào thì trả xe mức xăng đó. Xe có tài xế thường đã bao gồm
+              xăng (tuỳ gói).
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Thuê xe có cần đặt cọc không?</h3>
+            <p>
+              Hầu hết các nhà cung cấp đều yêu cầu đặt cọc bằng tiền mặt hoặc
+              giữ thẻ tín dụng để đảm bảo trong quá trình thuê xe.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Dữ liệu giả lập
+      const carData = {
+        jakarta: [
+          {
+            name: "Toyota Avanza",
+            type: "with-driver",
+            price: "500.000 VND/ngày",
+            seats: 7,
+          },
+          {
+            name: "Honda Brio",
+            type: "self-drive",
+            price: "350.000 VND/ngày",
+            seats: 4,
+          },
+          {
+            name: "Innova Reborn",
+            type: "with-driver",
+            price: "750.000 VND/ngày",
+            seats: 7,
+          },
+        ],
+        sydney: [
+          {
+            name: "Hyundai i30",
+            type: "self-drive",
+            price: "1.200.000 VND/ngày",
+            seats: 5,
+          },
+          {
+            name: "Toyota Camry",
+            type: "self-drive",
+            price: "1.500.000 VND/ngày",
+            seats: 5,
+          },
+        ],
+        bali: [
+          {
+            name: "Scoopy Bike",
+            type: "self-drive",
+            price: "150.000 VND/ngày",
+            seats: 2,
+          },
+          {
+            name: "Toyota Raize",
+            type: "self-drive",
+            price: "600.000 VND/ngày",
+            seats: 5,
+          },
+        ],
+        bangkok: [
+          {
+            name: "Mazda 2",
+            type: "self-drive",
+            price: "550.000 VND/ngày",
+            seats: 4,
+          },
+          {
+            name: "Commuter Van",
+            type: "with-driver",
+            price: "2.500.000 VND/ngày",
+            seats: 12,
+          },
+        ],
+        melbourne: [
+          {
+            name: "Mazda 3",
+            type: "self-drive",
+            price: "580.000 VND/ngày",
+            seats: 5,
+          },
+          {
+            name: "Toyota Kluger",
+            type: "with-driver",
+            price: "1.250.000 VND/ngày",
+            seats: 7,
+          },
+        ],
+        "hồ chí minh": [
+          {
+            name: "Toyota Vios",
+            type: "self-drive",
+            price: "450.000 VND/ngày",
+            seats: 5,
+          },
+          {
+            name: "Ford Everest",
+            type: "with-driver",
+            price: "1.100.000 VND/ngày",
+            seats: 7,
+          },
+          {
+            name: "Mazda CX-5",
+            type: "self-drive",
+            price: "700.000 VND/ngày",
+            seats: 5,
+          },
+          {
+            name: "Mercedes E-Class",
+            type: "with-driver",
+            price: "2.000.000 VND/ngày",
+            seats: 5,
+          },
+        ],
+      };
+
+      function handleSearch() {
+        const location = document
+          .getElementById("location-input")
+          .value.toLowerCase()
+          .trim();
+        const startDate = document.getElementById("start-date").value;
+        const rentalTime = document.getElementById("rental-time").value;
+        const rentalType = document.querySelector(
+          'input[name="rental-type"]:checked'
+        ).value;
+
+        const resultsDiv = document.getElementById("search-results");
+        const resultsContent = document.getElementById("results-content");
+
+        if (!location) {
+          alert("Vui lòng nhập địa điểm thuê xe!");
+          return;
+        }
+
+        // Tìm kiếm trong dữ liệu
+        let cars = [];
+        for (let city in carData) {
+          if (city.includes(location) || location.includes(city)) {
+            cars = carData[city];
+            break;
+          }
+        }
+
+        // Lọc theo loại xe nếu không phải "all"
+        if (rentalType !== "all") {
+          cars = cars.filter((car) => car.type === rentalType);
+        }
+
+        // Hiển thị kết quả
+        if (cars.length > 0) {
+          let html = `
+            <p style="margin-bottom: 15px; color: #666;">
+              <strong>Địa điểm:</strong> ${location} | 
+              <strong>Ngày:</strong> ${startDate} | 
+              <strong>Giờ:</strong> ${rentalTime}
+            </p>
+            <p style="margin-bottom: 20px; color: #3f51b5; font-weight: bold;">
+              Tìm thấy ${cars.length} xe phù hợp:
+            </p>
+          `;
+
+          cars.forEach((car) => {
+            const typeText = car.type === "self-drive" ? "Tự lái" : "Có tài xế";
+            html += `
+              <div style="background: white; padding: 15px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #e0e0e0;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div>
+                    <h4 style="color: #333; margin-bottom: 5px;">${car.name}</h4>
+                    <p style="color: #666; font-size: 14px;">
+                      ${typeText} • ${car.seats} chỗ ngồi
+                    </p>
+                  </div>
+                  <div style="text-align: right;">
+                    <p style="color: #3f51b5; font-size: 18px; font-weight: bold; margin-bottom: 5px;">
+                      ${car.price}
+                    </p>
+                    <button style="background: #3f51b5; color: white; border: none; padding: 8px 20px; border-radius: 5px; cursor: pointer; font-size: 14px;">
+                      Đặt xe
+                    </button>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+
+          resultsContent.innerHTML = html;
+          resultsDiv.style.display = "block";
+
+          // Cuộn xuống phần kết quả
+          resultsDiv.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        } else {
+          resultsContent.innerHTML = `
+            <p style="color: #666; text-align: center; padding: 20px;">
+              Không tìm thấy xe phù hợp tại địa điểm "${location}". 
+              Vui lòng thử tìm kiếm với địa điểm khác như: Jakarta, Bali, Bangkok, Hồ Chí Minh...
+            </p>
+          `;
+          resultsDiv.style.display = "block";
+          resultsDiv.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        }
+      }
+
+      // Cho phép tìm kiếm bằng phím Enter
+      document
+        .getElementById("location-input")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            handleSearch();
+          }
+        });
+    </script>
+<footer class="ngonluon">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    Travel <span>✈️</span>
+                </div>
+                
+                <h3 class="footer-heading">Đối tác thanh toán</h3>
+                <div class="payment-partners">
+                    <div class="partner-box"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"></div>
+                    <div class="partner-box"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa"></div>
+                    <div class="partner-box">JCB</div>
+                    <div class="partner-box">Amex</div>
+                    <div class="partner-box">VietQR</div>
+                    <div class="partner-box">MoMo</div>
+                    <div class="partner-box">Techcom</div>
+                    <div class="partner-box">VPBank</div>
+                    <div class="partner-box">VIB</div>
+                    <div class="partner-box">VCB</div>
+                    <div class="partner-box">OnePay</div>
+                    <div class="partner-box">MB</div>
+                </div>
+            </div>
+      
+              <div class="footer-col">
+                  <h3 class="footer-heading">Về Travel</h3>
+                  <ul class="footer-links">
+                      <li><a href="#">Cách đặt chỗ</a></li>
+                      <li><a href="#">Liên hệ chúng tôi</a></li>
+                      <li><a href="#">Trợ giúp</a></li>
+                      <li><a href="#">Tuyển dụng</a></li>
+                      <li><a href="#">Về chúng tôi</a></li>
+                  </ul>
+      
+                  <h3 class="footer-heading" style="margin-top: 20px;">Theo dõi chúng tôi trên</h3>
+                  <ul class="social-links">
+                      <li><a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a></li>
+                      <li><a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                      <li><a href="#"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                      <li><a href="#"><i class="fa-brands fa-youtube"></i> Youtube</a></li>
+                      <li><a href="#"><i class="fa-brands fa-telegram"></i> Telegram</a></li>
+                  </ul>
+              </div>
+      
+              <div class="footer-col">
+                  <h3 class="footer-heading">Sản phẩm</h3>
+                  <ul class="footer-links">
+                      <li><a href="../KhachSan/trang3.html">Khách sạn</a></li>
+                      <li><a href="#">Vé máy bay</a></li>
+                      <li><a href="../DuaDonSanBay/DuaDonSanBay.html">Đưa đón sân bay</a></li>
+                      <li><a href="../ChoThueXe/trang4.html">Cho thuê xe</a></li>
+                      <li><a href="#">Hoạt động vui chơi/giải trí</a></li>
+                      <li><a href="../DuThuyen/DuThuyen.html">Du thuyền</a></li>
+                      <li><a href="#">Biệt thự</a></li>
+                      <li><a href="#">Căn hộ</a></li>
+                  </ul>
+              </div>
+      
+              <div class="footer-col">
+                  <h3 class="footer-heading">Khác</h3>
+                  <ul class="footer-links">
+                      <li><a href="#">Travel Affiliate</a></li>
+                      <li><a href="#">Travel Blog</a></li>
+                      <li><a href="#">Chính sách</a></li>
+                      <li><a href="#">Chính sách quyền riêng tư</a></li>
+                      <li><a href="#">Điều khoản</a></li>
+                      <li><a href="#">Đăng kí nơi nghỉ</a></li>
+                      <li><a href="#">Đăng kí doanh nghiệp</a></li>
+                      <li><a href="#">Khu vực báo chí</a></li>
+                      <li><a href="#">Quy chế hoạt động</a></li>
+                      <li><a href="#">Vulnerability Disclosure Program</a></li>
+                  </ul>
+              </div>
+          </div>
+      
+          <div class="footer-bottom">
+              <p>Công ty TNHH Travel Việt Nam. Mã số DN: 0313581779. Tòa nhà An Phú, 117-119 Lý Chính Thắng, Phường Võ Thị Sáu, Quận 3, TP.HCM</p>
+              <p>Copyright © 2025 Travel. All rights reserved</p>
+          </div>
+      </footer>
+  </body>
+</html>

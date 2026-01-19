@@ -1,0 +1,372 @@
+/* ===== Cam Nang Du Lich Specific CSS ===== */
+/* Global styles and variables are inherited from ../TrangChu/style.css */
+
+/* ================= BANNER ================= */
+.banner-section {
+    margin-top: 16px;
+}
+
+.banner-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #ddd;
+}
+
+.banner-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.banner-item {
+    min-width: 100%;
+}
+
+.banner-item img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Navigation buttons */
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-btn.prev {
+    left: 12px;
+}
+
+.nav-btn.next {
+    right: 12px;
+}
+
+/* Dots */
+.dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background: #cbd5e1;
+    border-radius: 50%;
+}
+
+.dot.active {
+    background: #0b5cff;
+} 
+/* ===== TRAVEL A-Z ===== */
+.travel-az {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.travel-az-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.travel-az-header p {
+  color: #666;
+  margin-top: 6px;
+}
+
+/* ===== TABS ===== */
+.travel-az-tabs {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0 28px;
+  flex-wrap: wrap;
+}
+
+.az-tab {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #f1f5f9;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.az-tab.active {
+  background: #007bff;
+  color: #fff;
+}
+
+/* ===== CONTENT ===== */
+.az-content {
+  display: none;
+}
+
+.az-content.active {
+  display: block;
+}
+
+/* ===== CARD GRID ===== */
+.az-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+/* ===== CARD ===== */
+.az-card {
+  position: relative;
+  height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.az-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.az-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.6), transparent);
+}
+
+.az-card-info {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  color: #fff;
+  z-index: 2;
+}
+
+.az-card-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .az-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* ===== POPULAR DESTINATION ===== */
+.popular-destination {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.pd-header h2 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.pd-header p {
+  margin-top: 6px;
+  color: #666;
+}
+
+/* ===== TABS ===== */
+.pd-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0 28px;
+}
+
+.pd-tab {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: #f1f5f9;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.pd-tab.active {
+  background: #007bff;
+  color: #fff;
+}
+
+/* ===== CONTENT ===== */
+.pd-content {
+  display: none;
+}
+
+.pd-content.active {
+  display: block;
+}
+
+/* ===== GRID ===== */
+.pd-card-grid {
+  display: flex;
+  gap: 16px;
+
+  overflow-x: auto;
+  padding-bottom: 10px;
+
+  scroll-behavior: smooth;
+}
+
+/* Ẩn scrollbar cho đẹp */
+.pd-card-grid::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* ===== CARD ===== */
+.pd-card {
+  flex: 0 0 240px;   /* KHÓA WIDTH → KHÔNG XUỐNG DÒNG */
+  height: 360px;
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pd-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pd-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.65), transparent);
+}
+
+.pd-card-info {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  color: #fff;
+  z-index: 2;
+}
+
+.pd-card-info span {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.pd-card-info h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .pd-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.ti-section {
+  margin: 60px 0;
+}
+
+.ti-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.ti-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ti-desc {
+  color: #666;
+  margin: 6px 0 20px;
+}
+
+.ti-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.ti-tab {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: none;
+  background: #f1f5f9;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.ti-tab.active {
+  background: #0a6cff;
+  color: #fff;
+}
+
+.ti-content {
+  display: none;
+}
+
+.ti-content.active {
+  display: block;
+}
+
+.ti-card-list {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.ti-card {
+  min-width: calc(25% - 12px);
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.ti-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.ti-card-body {
+  padding: 12px;
+}
+
+.ti-card-body h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ti-card-body span {
+  font-size: 13px;
+  color: #0a6cff;
+}
+
+.ti-card-body p {
+  font-size: 13px;
+  color: #777;
+  margin-top: 4px;
+}
+/* End of specific styles */
